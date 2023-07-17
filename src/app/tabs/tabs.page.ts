@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tabs',
@@ -7,6 +8,11 @@ import { Component } from '@angular/core';
 })
 export class TabsPage {
 
-  constructor() {}
+  constructor(private router: Router) {}
 
+  openCategorias() {
+    // Genera el enlace hacia la página de categorías
+    const categoriasUrl = this.router.createUrlTree(['/categorias']);
+    window.open(categoriasUrl.toString(), '_self');
+  }
 }
